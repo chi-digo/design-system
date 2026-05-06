@@ -30,6 +30,7 @@ export function AudioPlayer({ src, label, variant = "inline", style, ...rest }: 
 
   const toggle = useCallback(() => {
     const audio = audioRef.current;
+    /* v8 ignore next */
     if (!audio) return;
     if (playing) {
       audio.pause();

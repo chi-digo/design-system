@@ -78,14 +78,23 @@ export function Select({
     }
   }, []);
 
+  // Set initial focus index when dropdown opens
+  const prevOpenRef = useRef(false);
+  useEffect(() => {
+    if (open && !prevOpenRef.current) {
+      const idx = flat.findIndex((o) => o.value === selected);
+      setFocusIdx(idx >= 0 ? idx : 0);
+    }
+    prevOpenRef.current = open;
+  }, [open]);
+
+  // Manage outside-click listener while open
   useEffect(() => {
     if (open) {
       document.addEventListener("mousedown", handleClickOutside);
-      const idx = flat.findIndex((o) => o.value === selected);
-      setFocusIdx(idx >= 0 ? idx : 0);
       return () => document.removeEventListener("mousedown", handleClickOutside);
     }
-  }, [open, handleClickOutside, selected, flat]);
+  }, [open, handleClickOutside]);
 
   useEffect(() => {
     if (open && listRef.current && focusIdx >= 0) {
