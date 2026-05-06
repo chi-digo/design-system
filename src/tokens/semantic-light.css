@@ -7,7 +7,7 @@
 :root,
 [data-theme="light"] {
   /* ---- Backgrounds ---- */
-  --bg-page: var(--color-hando-white);
+  --bg-page: var(--color-hando-cream);
   --bg-surface: var(--color-white);
   --bg-surface-warm: var(--color-coral-lime-sand);
   --bg-surface-brand: var(--color-kaya-indigo);
@@ -20,7 +20,7 @@
   --fg-heading: var(--color-kaya-indigo);
   --fg-muted: rgba(26, 26, 26, 0.60);
   --fg-subtle: rgba(26, 26, 26, 0.40);
-  --fg-on-brand: var(--color-hando-white);
+  --fg-on-brand: var(--color-hando-cream);
   --fg-link: var(--color-kaya-indigo);
   --fg-link-hover: var(--color-vigango-black);
 
@@ -65,7 +65,7 @@
 
   /* ---- Domain-specific ---- */
   --sense-number-bg: var(--color-kaya-indigo);
-  --sense-number-fg: var(--color-hando-white);
+  --sense-number-fg: var(--color-hando-cream);
   --noun-class-bg: var(--color-mangrove-green);
-  --noun-class-fg: var(--color-hando-white);
+  --noun-class-fg: var(--color-hando-cream);
 }

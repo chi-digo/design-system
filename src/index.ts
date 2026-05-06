@@ -16,3 +16,6 @@ export { useMediaQuery } from "./hooks/useMediaQuery";
 // Utilities
 export { cn } from "./utils/cn";
 export { breakpoints, type Breakpoint } from "./utils/breakpoints";
+
+// Components — re-export everything from the components barrel
+export * from "./components";

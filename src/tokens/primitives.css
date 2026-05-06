@@ -6,7 +6,7 @@
 
 :root {
   /* ---- Primary palette ---- */
-  --color-hando-white: #F2EAD7;
+  --color-hando-cream: #F2EAD7;
   --color-ngundu-red: #B5261D;
   --color-kaya-indigo: #1F3A5F;
   --color-vigango-black: #1A1A1A;
@@ -30,7 +30,7 @@
   /* ---- Neutral/derived ---- */
   --color-white: #FFFFFF;
   --color-dark-surface: #141416;
-  --color-dark-surface-raised: #13243C;
+  --color-dark-surface-raised: #1E1E20;
   --color-dark-surface-warm: #1E1A16;
   --color-ngundu-red-muted: #C8463C;
 

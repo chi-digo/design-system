@@ -28,7 +28,7 @@ body {
 /* ---- Selection ---- */
 ::selection {
   background: var(--color-kaya-indigo);
-  color: var(--color-hando-white);
+  color: var(--color-hando-cream);
 }
 
 [data-theme="dark"] ::selection {

@@ -9,7 +9,7 @@ const chidigoPreset = {
   theme: {
     colors: {
       // Primitives
-      "hando-white": "var(--color-hando-white)",
+      "hando-cream": "var(--color-hando-cream)",
       "ngundu-red": "var(--color-ngundu-red)",
       "kaya-indigo": "var(--color-kaya-indigo)",
       "vigango-black": "var(--color-vigango-black)",

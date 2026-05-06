@@ -1,0 +1,111 @@
+@import "tailwindcss";
+@import "../../src/tokens/index.css";
+
+@theme inline {
+  --color-hando-cream: #F2EAD7;
+  --color-ngundu-red: #B5261D;
+  --color-kaya-indigo: #1F3A5F;
+  --color-vigango-black: #1A1A1A;
+  --color-coral-lime-sand: #E8DCC2;
+  --color-mangrove-green: #2E4A2C;
+  --color-palm-frond-green: #7A8C3C;
+  --color-mnazi-gold: #C99846;
+  --color-kanga-orange: #E8761B;
+  --color-kanga-yellow: #F2C12E;
+
+  --color-background: var(--bg-page);
+  --color-foreground: var(--fg-default);
+
+  --font-display: var(--font-fraunces);
+  --font-serif: var(--font-source-serif);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+/* Doc site specific */
+.doc-prose h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 1.20;
+  color: var(--fg-heading);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.doc-prose h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.375rem;
+  line-height: 1.30;
+  color: var(--fg-heading);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.doc-prose p {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--fg-default);
+  margin-bottom: 1rem;
+  max-width: 42.5rem;
+}
+
+.doc-prose code {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  background: var(--bg-surface-muted);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-sm);
+}
+
+.doc-prose pre {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  background: var(--color-vigango-black);
+  color: var(--color-hando-cream);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.doc-prose pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}
+
+.doc-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+}
+
+.doc-prose th {
+  text-align: left;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--border-default);
+  color: var(--fg-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.doc-prose td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-default);
+  vertical-align: top;
+}
+
+.doc-card-link:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
+}
