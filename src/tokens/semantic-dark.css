@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Chidigo Design System — Semantic Tokens (Dark Mode)
+   Remaps semantic tokens for dark backgrounds. Dark mode is not an
+   inversion — it is a careful remapping of elevation, contrast, and saturation.
+   ========================================================================== */
+
+[data-theme="dark"] {
+  /* ---- Backgrounds ---- */
+  --bg-page: var(--color-dark-surface);
+  --bg-surface: var(--color-dark-surface-raised);
+  --bg-surface-warm: var(--color-dark-surface-warm);
+  --bg-surface-brand: var(--color-kaya-indigo);
+  --bg-surface-muted: rgba(242, 234, 215, 0.04);
+  --bg-overlay: rgba(0, 0, 0, 0.60);
+  --bg-example: #1A2A42;
+
+  /* ---- Text / Foreground ---- */
+  --fg-default: var(--color-hando-white);
+  --fg-heading: var(--color-coral-lime-sand);
+  --fg-muted: rgba(242, 234, 215, 0.60);
+  --fg-subtle: rgba(242, 234, 215, 0.40);
+  --fg-on-brand: var(--color-hando-white);
+  --fg-link: var(--color-mnazi-gold);
+  --fg-link-hover: #D4A85A;
+
+  /* ---- Borders ---- */
+  --border-default: rgba(242, 234, 215, 0.12);
+  --border-strong: rgba(242, 234, 215, 0.24);
+  --border-focus: var(--color-mnazi-gold);
+
+  /* ---- Focus ring ---- */
+  --focus-ring-color: var(--color-mnazi-gold);
+
+  /* ---- Status ---- */
+  --color-success: #4A7A48;
+  --color-warning: var(--color-kanga-orange);
+  --color-error: #E85555;
+  --color-info: var(--color-mnazi-gold);
+
+  /* ---- Interactive ---- */
+  --interactive-default: var(--color-mnazi-gold);
+  --interactive-hover: #D4A85A;
+  --interactive-active: #B88A3C;
+  --interactive-disabled: rgba(242, 234, 215, 0.20);
+
+  /* ---- Accents ---- */
+  --accent-primary: var(--color-ngundu-red-muted);
+  --accent-editorial: #4A7AAF;
+  --accent-community: #4A8A48;
+  --accent-celebratory: #F09040;
+  --accent-favourite: var(--color-ngundu-red-muted);
+
+  /* ---- Audio player ---- */
+  --audio-play: var(--color-mnazi-gold);
+  --audio-play-bg: var(--color-dark-surface-raised);
+
+  /* ---- Domain-specific ---- */
+  --sense-number-bg: var(--color-kaya-indigo);
+  --sense-number-fg: var(--color-hando-white);
+  --noun-class-bg: var(--color-mangrove-green);
+  --noun-class-fg: var(--color-hando-white);
+
+  /* ---- Shadows: reduced in dark mode ---- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.20), 0 1px 3px rgba(0, 0, 0, 0.30);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.20);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.30), 0 4px 6px rgba(0, 0, 0, 0.20);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.30), 0 10px 10px rgba(0, 0, 0, 0.20);
+
+  /* ---- Selection ---- */
+  color-scheme: dark;
+}

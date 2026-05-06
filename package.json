@@ -1,0 +1,63 @@
+{
+  "name": "@chidigo/design-system",
+  "version": "0.1.0",
+  "description": "Design system for Chidigo digital products — tokens, components, and patterns for the Digo language platform.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./tokens": "./dist/tokens/index.css",
+    "./tokens/*": "./dist/tokens/*",
+    "./tailwind-preset": {
+      "import": "./dist/tailwind-preset.js",
+      "types": "./dist/tailwind-preset.d.ts"
+    },
+    "./fonts/*": "./dist/fonts/*"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.0.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "react": "^19",
+    "react-dom": "^19",
+    "tsup": "^8.0.0",
+    "typescript": "^5",
+    "vitest": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chi-digo/design-system.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "chidigo",
+    "digo",
+    "design-system",
+    "react",
+    "components",
+    "tokens"
+  ]
+}

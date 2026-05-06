@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Chidigo Design System — Semantic Tokens (Light Mode)
+   Intent-based tokens that map to primitives. These are the primary
+   interface for component authors.
+   ========================================================================== */
+
+:root,
+[data-theme="light"] {
+  /* ---- Backgrounds ---- */
+  --bg-page: var(--color-hando-white);
+  --bg-surface: var(--color-white);
+  --bg-surface-warm: var(--color-coral-lime-sand);
+  --bg-surface-brand: var(--color-kaya-indigo);
+  --bg-surface-muted: rgba(26, 26, 26, 0.04);
+  --bg-overlay: rgba(26, 26, 26, 0.50);
+  --bg-example: var(--color-coral-lime-sand);
+
+  /* ---- Text / Foreground ---- */
+  --fg-default: var(--color-vigango-black);
+  --fg-heading: var(--color-kaya-indigo);
+  --fg-muted: rgba(26, 26, 26, 0.60);
+  --fg-subtle: rgba(26, 26, 26, 0.40);
+  --fg-on-brand: var(--color-hando-white);
+  --fg-link: var(--color-kaya-indigo);
+  --fg-link-hover: var(--color-vigango-black);
+
+  /* ---- Borders ---- */
+  --border-default: rgba(26, 26, 26, 0.12);
+  --border-strong: rgba(26, 26, 26, 0.24);
+  --border-focus: var(--color-kaya-indigo);
+
+  /* ---- Focus ring ---- */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 4px;
+  --focus-ring-color: var(--color-kaya-indigo);
+
+  /* ---- Status ---- */
+  --color-success: var(--color-success-green);
+  --color-warning: var(--color-kanga-orange);
+  --color-error: var(--color-error-red);
+  --color-info: var(--color-kaya-indigo);
+
+  /* ---- Opacity ---- */
+  --opacity-muted: 0.60;
+  --opacity-secondary: 0.70;
+  --opacity-subtle: 0.40;
+  --opacity-disabled: 0.20;
+
+  /* ---- Interactive ---- */
+  --interactive-default: var(--color-kaya-indigo);
+  --interactive-hover: #162D4D;
+  --interactive-active: #0E1A2A;
+  --interactive-disabled: rgba(26, 26, 26, 0.20);
+
+  /* ---- Accents ---- */
+  --accent-primary: var(--color-ngundu-red);
+  --accent-editorial: var(--color-kaya-indigo);
+  --accent-community: var(--color-mangrove-green);
+  --accent-celebratory: var(--color-kanga-orange);
+  --accent-favourite: var(--color-ngundu-red);
+
+  /* ---- Audio player ---- */
+  --audio-play: var(--color-mnazi-gold);
+  --audio-play-bg: var(--color-kaya-indigo);
+
+  /* ---- Domain-specific ---- */
+  --sense-number-bg: var(--color-kaya-indigo);
+  --sense-number-fg: var(--color-hando-white);
+  --noun-class-bg: var(--color-mangrove-green);
+  --noun-class-fg: var(--color-hando-white);
+}

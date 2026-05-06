@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Chidigo Design System — Base Styles
+   Global resets and defaults applied to all products.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-page);
+  color: var(--fg-default);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- Focus visible ---- */
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ---- Selection ---- */
+::selection {
+  background: var(--color-kaya-indigo);
+  color: var(--color-hando-white);
+}
+
+[data-theme="dark"] ::selection {
+  background: var(--color-mnazi-gold);
+  color: var(--color-vigango-black);
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: var(--radius-full);
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Skip to content ---- */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: var(--z-tooltip);
+}
+
+.skip-to-content:focus {
+  position: fixed;
+  top: var(--space-2);
+  left: var(--space-2);
+  width: auto;
+  height: auto;
+  padding: var(--space-2) var(--space-4);
+  background: var(--bg-surface);
+  color: var(--fg-default);
+  border: var(--border-width-thick) solid var(--focus-ring-color);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+}
