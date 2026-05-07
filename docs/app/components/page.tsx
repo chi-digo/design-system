@@ -283,29 +283,29 @@ export default function ComponentsPage() {
         <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
           <div>
             <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", fontWeight: 500, color: "var(--fg-muted)", marginBottom: "0.5rem" }}>Fixed columns (2, 3, 4)</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-3)" }}>
-              <Grid columns={2} gap="var(--space-3)">
+            <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
+              <Grid columns={2} gap="var(--space-4)">
                 {[1, 2].map((n) => (
-                  <Box key={n} padding="var(--space-3)" bg="var(--bg-surface-muted)" radius="var(--radius-sm)"><Text variant="ui">1/{2}</Text></Box>
+                  <Box key={n} padding="var(--space-4)" bg="var(--bg-surface-muted)" radius="var(--radius-md)"><Text variant="ui" style={{ fontWeight: 500 }}>1/2</Text></Box>
                 ))}
               </Grid>
-              <Grid columns={3} gap="var(--space-3)">
+              <Grid columns={3} gap="var(--space-4)">
                 {[1, 2, 3].map((n) => (
-                  <Box key={n} padding="var(--space-3)" bg="var(--bg-surface-muted)" radius="var(--radius-sm)"><Text variant="ui">1/{3}</Text></Box>
+                  <Box key={n} padding="var(--space-4)" bg="var(--bg-surface-muted)" radius="var(--radius-md)"><Text variant="ui" style={{ fontWeight: 500 }}>1/3</Text></Box>
                 ))}
               </Grid>
-              <Grid columns={4} gap="var(--space-3)">
+              <Grid columns={4} gap="var(--space-4)">
                 {[1, 2, 3, 4].map((n) => (
-                  <Box key={n} padding="var(--space-3)" bg="var(--bg-surface-muted)" radius="var(--radius-sm)"><Text variant="ui">1/{4}</Text></Box>
+                  <Box key={n} padding="var(--space-4)" bg="var(--bg-surface-muted)" radius="var(--radius-md)"><Text variant="ui" style={{ fontWeight: 500 }}>1/4</Text></Box>
                 ))}
               </Grid>
             </div>
           </div>
           <div>
             <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", fontWeight: 500, color: "var(--fg-muted)", marginBottom: "0.5rem" }}>Responsive auto-fill (min 150px) — resize the window to see columns reflow</p>
-            <Grid minChildWidth="150px" gap="var(--space-3)">
+            <Grid minChildWidth="150px" gap="var(--space-4)">
               {["mnazi", "nyumba", "mwana", "kuni", "maji", "chakurya"].map((w) => (
-                <Box key={w} padding="var(--space-3)" bg="var(--bg-surface-muted)" radius="var(--radius-sm)">
+                <Box key={w} padding="var(--space-4)" bg="var(--bg-surface-muted)" radius="var(--radius-md)">
                   <Text variant="ui" style={{ fontWeight: 600 }}>{w}</Text>
                   <Text variant="body-sm" color="muted">Dictionary entry</Text>
                 </Box>
