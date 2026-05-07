@@ -326,11 +326,33 @@ export default function ComponentsPage() {
             </Grid>
           </div>
           <div>
-            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", fontWeight: 500, color: "var(--fg-muted)", marginBottom: "0.5rem" }}>Card layout with different gap sizes</p>
-            <Grid minChildWidth="200px" gap="var(--space-6)">
+            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", fontWeight: 500, color: "var(--fg-muted)", marginBottom: "0.5rem" }}>Card layout — small gap (space-2 = 8px)</p>
+            <Grid minChildWidth="200px" gap="var(--space-2)">
               {["mnazi", "nyumba", "mwana"].map((word) => (
                 <Card key={word}>
                   <CardHeader title={word} subtitle="Noun, cl. 3" />
+                  <Text variant="body-sm" color="muted">Tap to view the full dictionary entry.</Text>
+                </Card>
+              ))}
+            </Grid>
+          </div>
+          <div>
+            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", fontWeight: 500, color: "var(--fg-muted)", marginBottom: "0.5rem" }}>Card layout — medium gap (space-4 = 16px)</p>
+            <Grid minChildWidth="200px" gap="var(--space-4)">
+              {["kuni", "maji", "chakurya"].map((word) => (
+                <Card key={word}>
+                  <CardHeader title={word} subtitle="Noun, cl. 9" />
+                  <Text variant="body-sm" color="muted">Tap to view the full dictionary entry.</Text>
+                </Card>
+              ))}
+            </Grid>
+          </div>
+          <div>
+            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", fontWeight: 500, color: "var(--fg-muted)", marginBottom: "0.5rem" }}>Card layout — large gap (space-8 = 32px)</p>
+            <Grid minChildWidth="200px" gap="var(--space-8)">
+              {["ngombe", "kuku", "mbuzi"].map((word) => (
+                <Card key={word}>
+                  <CardHeader title={word} subtitle="Noun, cl. 9" />
                   <Text variant="body-sm" color="muted">Tap to view the full dictionary entry.</Text>
                 </Card>
               ))}
