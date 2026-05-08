@@ -82,3 +82,8 @@ export { ProverbOfTheDay, type ProverbOfTheDayProps } from "./ProverbOfTheDay";
 // Contribution
 export { ContributionPrompt, type ContributionPromptProps, type ContributionVariant } from "./ContributionPrompt";
 export { TrackBadge, type TrackBadgeProps, type Track } from "./TrackBadge";
+
+// Quiz
+export { QuizOption, type QuizOptionProps, type QuizOptionState } from "./QuizOption";
+export { Confetti, type ConfettiProps } from "./Confetti";
+export { ScoreCard, type ScoreCardProps, type ScoreBreakdown } from "./ScoreCard";
