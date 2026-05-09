@@ -130,7 +130,7 @@ export function ScoreCard({
             flexDirection: "column",
             gap: "var(--space-2)",
             width: "100%",
-            maxWidth: "280px",
+            maxWidth: "360px",
           }}
         >
           {breakdown.map((b) => (
