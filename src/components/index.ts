@@ -20,6 +20,7 @@ export { Button, type ButtonProps, type ButtonVariant, type ButtonSize } from ".
 export { IconButton, type IconButtonProps, type IconButtonVariant, type IconButtonSize } from "./IconButton";
 export { ButtonGroup, type ButtonGroupProps } from "./ButtonGroup";
 export { Link, type LinkProps, type LinkVariant } from "./Link";
+export { FavouriteButton, type FavouriteButtonProps, type FavouriteButtonSize } from "./FavouriteButton";
 
 // Selection and Input
 export { TextField, type TextFieldProps } from "./TextField";
@@ -58,6 +59,8 @@ export { DataTable, type DataTableProps, type DataTableColumn } from "./DataTabl
 export { DescriptionList, type DescriptionListProps, type DescriptionItem } from "./DescriptionList";
 export { Timeline, type TimelineProps, type TimelineItem } from "./Timeline";
 export { Avatar, type AvatarProps, type AvatarSize } from "./Avatar";
+export { StatCard, type StatCardProps } from "./StatCard";
+export { Sparkline, type SparklineProps } from "./Sparkline";
 
 // Overlays
 export { Dialog, type DialogProps } from "./Dialog";
