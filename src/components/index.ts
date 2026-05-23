@@ -63,6 +63,7 @@ export { StatCard, type StatCardProps } from "./StatCard";
 export { Sparkline, type SparklineProps } from "./Sparkline";
 
 // Overlays
+export { BottomSheet, type BottomSheetProps } from "./BottomSheet";
 export { Dialog, type DialogProps } from "./Dialog";
 export { Drawer, type DrawerProps } from "./Drawer";
 export { Popover, type PopoverProps, type PopoverPosition } from "./Popover";
