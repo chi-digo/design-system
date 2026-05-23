@@ -3,10 +3,11 @@
 import {
   useEffect,
   useRef,
-  useCallback,
+  useState,
   type HTMLAttributes,
   type ReactNode,
 } from "react";
+import { createPortal } from "react-dom";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 
 export interface BottomSheetProps extends HTMLAttributes<HTMLDivElement> {
@@ -35,12 +36,23 @@ export function BottomSheet({
   const sheetRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<Element | null>(null);
   const scrollYRef = useRef(0);
+  const onCloseRef = useRef(onClose);
   const reducedMotion = useReducedMotion();
+  const [portalHost, setPortalHost] = useState<HTMLElement | null>(null);
 
-  const handleKeyDown = useCallback(
-    (e: KeyboardEvent) => {
+  useEffect(() => {
+    setPortalHost(document.body);
+  }, []);
+
+  onCloseRef.current = onClose;
+
+  // Keyboard handling — separate effect so it doesn't churn the scroll lock
+  useEffect(() => {
+    if (!open) return;
+
+    const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        onClose();
+        onCloseRef.current();
         return;
       }
       if (e.key === "Tab" && sheetRef.current) {
@@ -58,53 +70,51 @@ export function BottomSheet({
           first.focus();
         }
       }
-    },
-    [onClose],
-  );
+    };
 
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  }, [open]);
+
+  // Scroll lock + focus management — depends ONLY on `open`
   useEffect(() => {
-    if (open) {
-      previousFocusRef.current = document.activeElement;
-      document.addEventListener("keydown", handleKeyDown);
-      requestAnimationFrame(() => {
-        const firstFocusable = sheetRef.current?.querySelector<HTMLElement>(
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
-        );
-        firstFocusable?.focus();
-      });
+    if (!open) return;
 
-      // iOS-safe body scroll lock
-      scrollYRef.current = window.scrollY;
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollYRef.current}px`;
-      document.body.style.left = "0";
-      document.body.style.right = "0";
-      document.body.style.overflow = "hidden";
-    } else {
+    previousFocusRef.current = document.activeElement;
+    scrollYRef.current = window.scrollY;
+
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollYRef.current}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.overflow = "hidden";
+
+    requestAnimationFrame(() => {
+      const firstFocusable = sheetRef.current?.querySelector<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      );
+      firstFocusable?.focus();
+    });
+
+    return () => {
       document.body.style.position = "";
       document.body.style.top = "";
       document.body.style.left = "";
       document.body.style.right = "";
       document.body.style.overflow = "";
       window.scrollTo(0, scrollYRef.current);
-    }
 
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      document.body.style.overflow = "";
       if (previousFocusRef.current instanceof HTMLElement) {
         previousFocusRef.current.focus();
       }
     };
-  }, [open, handleKeyDown]);
+  }, [open]);
 
   const duration = reducedMotion ? "0ms" : "300ms";
 
-  return (
+  if (!portalHost) return null;
+
+  return createPortal(
     <div
       style={{
         position: "fixed",
@@ -117,7 +127,7 @@ export function BottomSheet({
     >
       {/* Backdrop */}
       <div
-        onClick={onClose}
+        onClick={() => onCloseRef.current()}
         aria-hidden="true"
         style={{
           position: "fixed",
@@ -125,6 +135,7 @@ export function BottomSheet({
           background: "rgba(26, 26, 26, 0.3)",
           opacity: open ? 1 : 0,
           transition: `opacity ${duration} ${open ? "ease-out" : "ease-in"}`,
+          cursor: "pointer",
         }}
       />
 
@@ -202,6 +213,7 @@ export function BottomSheet({
           {children}
         </div>
       </div>
-    </div>
+    </div>,
+    portalHost,
   );
 }

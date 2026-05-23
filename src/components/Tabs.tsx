@@ -12,9 +12,10 @@ export interface TabItem {
 export interface TabsProps extends HTMLAttributes<HTMLDivElement> {
   items: TabItem[];
   defaultIndex?: number;
+  onTabChange?: (index: number, item: TabItem) => void;
 }
 
-export function Tabs({ items, defaultIndex = 0, style, ...rest }: TabsProps) {
+export function Tabs({ items, defaultIndex = 0, onTabChange, style, ...rest }: TabsProps) {
   const [activeIndex, setActiveIndex] = useState(defaultIndex);
   const baseId = useId();
 
@@ -40,7 +41,10 @@ export function Tabs({ items, defaultIndex = 0, style, ...rest }: TabsProps) {
       return;
     }
     e.preventDefault();
-    setActiveIndex(newIndex);
+    if (newIndex !== index) {
+      setActiveIndex(newIndex);
+      onTabChange?.(newIndex, items[newIndex]);
+    }
     document.getElementById(`${baseId}-tab-${newIndex}`)?.focus();
   };
 
@@ -65,7 +69,7 @@ export function Tabs({ items, defaultIndex = 0, style, ...rest }: TabsProps) {
               aria-controls={`${baseId}-panel-${i}`}
               aria-disabled={tab.disabled}
               tabIndex={isActive ? 0 : -1}
-              onClick={() => !tab.disabled && setActiveIndex(i)}
+              onClick={() => { if (!tab.disabled && i !== activeIndex) { setActiveIndex(i); onTabChange?.(i, items[i]); } }}
               onKeyDown={(e) => handleKeyDown(e, i)}
               style={{
                 padding: "var(--space-3) var(--space-4)",
